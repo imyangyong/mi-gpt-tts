@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
 
   // 解析原始请求 URL
   req.url = req.url.split(kSecretPath)[1];
-  const { pathname } = new URL("http://127.0.0.1" + req.url);
+  const { pathname } = new URL("http://0.0.0.0" + req.url);
   const filePath = `public${pathname}`;
 
   console.log("🔥 " + decodeURI(req.url));
